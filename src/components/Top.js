@@ -3,10 +3,11 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import TopHeader from './TopHeader';
 import Rate from './Rate';
+import UncompletedTodoList from './UncompletedTodoList';
 
 const useStyles = makeStyles({
     root: {
-      backgroundColor: 'green'
+        display: 'flex',
     },
   });
 
@@ -16,7 +17,10 @@ const Top = () => {
     return (
         <>
         <TopHeader />
-        <Rate className={classes.root} />
+        <div className={classes.root}>
+        <UncompletedTodoList />
+        <Rate />
+        </div>
         </>
     );
 }
