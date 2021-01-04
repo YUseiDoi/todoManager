@@ -7,11 +7,13 @@ const useStyles = makeStyles({
       marginLeft: '30%',
       marginTop: '40px',
       marginBottom: '0px',
+      color: '#444444',
     },
     root2: {
         fontSize: '50px',
         marginLeft: '60%',
-        marginTop: '0px'
+        marginTop: '0px',
+        color: '#444444',
       },
   });
 
