@@ -4,13 +4,11 @@ import { Grommet, Box, Meter, Stack, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 import { makeStyles } from '@material-ui/core/styles';
-import CustomAnalog from './Clock';
-import Digital from './DigitalClock';
-
+import CustomDateCalendar from './Calender';
 
 const useStyles = makeStyles({
     root: {
-      fontSize: '45px',
+      fontSize: '35px',
       marginTop: '3rem',
       marginBottom: '1rem',
       textAlign: 'center',
@@ -69,11 +67,14 @@ const Rate = () => {
         </Stack>
       </Box>
     </Grommet>
+    {/*
     <div className={classes.root2}>
             <p className={classes.text}>Time</p>
         </div>
         <CustomAnalog />
         <Digital />
+            */}
+    <CustomDateCalendar />
     </div>
   );
 };

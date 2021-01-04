@@ -41,18 +41,9 @@ const useStyles = makeStyles({
       margin: '0 15% 0 15%',
       backgroundColor: '#F6E7FB',
     },
-    add: {
-      margin: '5rem 25% 0 25%',
-      lineHeight: '70px',
-      //backgroundColor: '#F6E7FB',
-      textAlign: 'center',
-      border: '2px solid #7D4CDB',
-      borderRadius: '10px 10px 10px 10px',
-      fontSize: '30px',
-    },
   });
 
-const UncompletedTodoList = () => {
+const CompletedTodoList = () => {
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
 
@@ -62,8 +53,8 @@ const UncompletedTodoList = () => {
 
     return (
         <>
-        <div className={classes.root2}>
-          <div className={classes.title}>Today's Todos</div>
+        <p className={classes.root2}>
+          <div className={classes.title}>Completed Todos</div>
           <div className={classes.container}>
             <List
               component="nav"
@@ -106,10 +97,9 @@ const UncompletedTodoList = () => {
               </Collapse>
             </List>
           </div>
-          <div className={classes.add}>+ Add New Todo</div>
-        </div>
+        </p>
       </>
     );
 }
 
-export default UncompletedTodoList;
+export default CompletedTodoList;
