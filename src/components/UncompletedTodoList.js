@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
 import List from '@material-ui/core/List';
@@ -10,6 +10,7 @@ import InboxIcon from '@material-ui/icons/MoveToInbox';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import StarBorder from '@material-ui/icons/StarBorder';
+import IconLabel from './AddButton';
 
 const useStyles = makeStyles({
   root: {
@@ -39,7 +40,7 @@ const useStyles = makeStyles({
     container: {
       minHeight: '700px',
       margin: '0 15% 0 15%',
-      backgroundColor: '#F6E7FB',
+      //backgroundColor: '#F6E7FB',
     },
     add: {
       margin: '5rem 25% 0 25%',
@@ -55,6 +56,12 @@ const useStyles = makeStyles({
 const UncompletedTodoList = () => {
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
+    const [title, setTitle] = useState('');
+    const [detail, setDetail] = useState('');
+
+    const task = [
+      {date: 20210105, title: "english", detail: "I have to study English for the entrance exam."}
+    ]
 
     const handleClick = () => {
       setOpen(!open);
@@ -63,7 +70,7 @@ const UncompletedTodoList = () => {
     return (
         <>
         <div className={classes.root2}>
-          <div className={classes.title}>Today's Todos</div>
+          <div className={classes.title}>Today's Tasks</div>
           <div className={classes.container}>
             <List
               component="nav"
@@ -87,26 +94,9 @@ const UncompletedTodoList = () => {
                   </ListItem>
                 </List>
               </Collapse>
-              <ListItem button onClick={handleClick} className={classes.list}>
-                <ListItemIcon>
-                  <InboxIcon />
-                </ListItemIcon>
-                <ListItemText primary="Inbox" />
-                {open ? <ExpandLess /> : <ExpandMore />}
-              </ListItem>
-              <Collapse in={open} timeout="auto" unmountOnExit>
-                <List component="div" disablePadding>
-                  <ListItem button className={classes.nested}>
-                    <ListItemIcon>
-                      <StarBorder />
-                    </ListItemIcon>
-                    <ListItemText primary="Starred" />
-                  </ListItem>
-                </List>
-              </Collapse>
             </List>
           </div>
-          <div className={classes.add}>+ Add New Todo</div>
+          <IconLabel />
         </div>
       </>
     );
